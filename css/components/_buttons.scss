@@ -1,0 +1,78 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    &--size {
+        &-xs {
+            height: 2.3rem;
+            padding: 0 1.1rem;
+            font: {
+                weight: 300;
+                size: 1.2rem;
+            }
+            border-radius: 1.1rem;
+            @include clamp ($width: 0.5rem, $height: 0.5rem, $margin: 0.4rem, $direction: 'right', $double: 'false');
+        }
+        &-s {
+            height: 2.6rem;
+            padding: 0 1.6rem;
+            border-radius: 1.3rem;
+            font: {
+                weight: 700;
+                size: 1.4rem;
+            }
+            letter-spacing: -0.05rem;
+            @include clamp ($width: 0.6rem, $height: 0.6rem, $margin: 0.6rem, $direction: 'right', $double: 'false');
+            &.btn--bgc-success {
+                background-color: #bff6eb;
+                color: #18cba6;
+            }
+            &.btn--bgc-danger {
+                background-color: #fcdad8;
+                color: #fb6860;
+            }
+            &.btn--bgc-warning {
+                background-color: #fef7db;
+                color: #f3d44f;
+            }
+        }
+        &-l {
+            height: 5.2rem;
+            padding: 0 7.3rem;
+            font-size: 2rem;
+            border-radius: 2.5rem;
+        }
+    }    
+    &--bgc {
+        &-none {
+            @include clamp ($width: 0.5rem, $height: 0.5rem, $margin: 0.5rem, $direction: 'right', $double: 'false');
+        }
+        &-secondary {
+            background-color: #999;
+            color: #fff;            
+            &::after {
+                border-color: #fff;
+            }
+        }
+        &-success {            
+            background-color: #18cba6;
+            color: #fff;         
+            &::after {
+                border-color: #18cba6;
+            }
+        }
+        &-danger {
+            background-color: #fb6860;
+            &::after {
+                border-color: #fb6860;
+            }
+        }
+        &-warning {
+            background-color: #f3d44f;
+            &::after {
+                border-color: #f3d44f;
+            }
+        }
+    }    
+}

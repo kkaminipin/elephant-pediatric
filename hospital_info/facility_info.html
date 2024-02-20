@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+
+	<!-- Title -->
+	<title>테스트</title>
+
+	<!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+	<!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header includeJs" data-include-file="/html/include/header.html"></header>
+        
+        <main class="container sub">
+            <div class="inner">
+                <aside class="aside aside--hospital-info">
+                    <h2 class="aside__tit">병원안내</h2>
+                    <ul class="snb">
+                        <li class="snb__item">
+                            <a href="" class="snb__link">인사말</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">병원알림</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">진료안내</a>
+                        </li>
+                        <li class="snb__item active">
+                            <a href="" class="snb__link">시설안내</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">오시는길</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">병원소식</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">자주찾는질문</a>
+                        </li>
+                    </ul>
+                </aside>
+                <!-- 서브페이지 본문 -->
+                <article class="substance">
+                    <div class="substance__head">
+                        <h3 class="substance__tit">시설안내</h3>
+                        <div class="location">
+                            <span class="location__item location__home"><img src="/img/common/home.png" alt="홈"></span>
+                            <span class="location__item location__middle">병원안내</span>
+                            <span class="location__item location__current">시설안내</span>
+                        </div>
+                    </div>
+                    <div class="substance__body">
+                        <div class="facility-info">                                                        
+                            <section class="swiper facility-slide">
+                                <h4 class="blind">시설 안내 이미지 슬라이드</h4>
+                                <div class="swiper-wrapper facility-slide__wrapper">
+                                    <div class="swiper-slide facility-slide__item">
+                                        <img src="/img/facility_info/facility1.jpg">
+                                        <div class="facility-slide__txt">
+                                            코끼리소아과 <em class="facility-slide__txt--em">안내데스크</em>
+                                        </div>                         
+                                    </div>
+                                    <div class="swiper-slide facility-slide__item">
+                                        <img src="/img/facility_info/facility2.jpg">
+                                        <div class="facility-slide__txt">
+                                            코끼리소아과 <em class="facility-slide__txt--em">키즈룸</em>
+                                        </div>                         
+                                    </div>
+                                    <div class="swiper-slide facility-slide__item">
+                                        <img src="/img/facility_info/facility3.jpg">
+                                        <div class="facility-slide__txt">
+                                            코끼리소아과 <em class="facility-slide__txt--em">대기실</em>
+                                        </div>                         
+                                    </div>
+                                    <div class="swiper-slide facility-slide__item">
+                                        <img src="/img/facility_info/facility4.jpg">
+                                        <div class="facility-slide__txt">
+                                            코끼리소아과 <em class="facility-slide__txt--em">진료실</em>
+                                        </div>                         
+                                    </div>
+                                    <div class="swiper-slide facility-slide__item">
+                                        <img src="/img/facility_info/facility5.jpg">
+                                        <div class="facility-slide__txt">
+                                            코끼리소아과 <em class="facility-slide__txt--em">수액실</em>
+                                        </div>                         
+                                    </div>
+                                    <div class="swiper-slide facility-slide__item">
+                                        <img src="/img/facility_info/facility6.jpg">
+                                        <div class="facility-slide__txt">
+                                            코끼리소아과 <em class="facility-slide__txt--em">엑스레이실</em>
+                                        </div>                         
+                                    </div>
+                                    <div class="swiper-slide facility-slide__item">
+                                        <img src="/img/facility_info/facility7.jpg">
+                                        <div class="facility-slide__txt">
+                                            코끼리소아과 <em class="facility-slide__txt--em">임상병리검사</em>
+                                        </div>                         
+                                    </div>
+                                </div>                                       
+                            </section>
+                            <section class="facility-thumbnail">
+                                <h4 class="blind">시설 안내 섬네일 슬라이드</h4>
+                                <div class="swiper facility-thumbnail__swiper">
+                                    <div class="swiper-wrapper facility-thumbnail__wrapper">
+                                        <div class="swiper-slide facility-thumbnail__item">
+                                            <img src="/img/facility_info/facility1.jpg" alt="안내데스크">
+                                        </div>
+                                        <div class="swiper-slide facility-thumbnail__item">
+                                            <img src="/img/facility_info/facility2.jpg" alt="키즈룸">
+                                        </div>
+                                        <div class="swiper-slide facility-thumbnail__item">
+                                            <img src="/img/facility_info/facility3.jpg" alt="대기실">
+                                        </div>
+                                        <div class="swiper-slide facility-thumbnail__item">
+                                            <img src="/img/facility_info/facility4.jpg" alt="진료실">
+                                        </div>
+                                        <div class="swiper-slide facility-thumbnail__item">
+                                            <img src="/img/facility_info/facility5.jpg" alt="수액실">
+                                        </div>
+                                        <div class="swiper-slide facility-thumbnail__item">
+                                            <img src="/img/facility_info/facility6.jpg" alt="엑스레이실">
+                                        </div>
+                                        <div class="swiper-slide facility-thumbnail__item">
+                                            <img src="/img/facility_info/facility7.jpg" alt="임상병리검사">
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="facility-thumbnail__arrow facility-thumbnail__prev"><img src="/img/facility_info/bg_gallery_prev.png" alt="이전 버튼"></div>
+                                <div class="facility-thumbnail__arrow facility-thumbnail__next"><img src="/img/facility_info/bg_gallery_next.png" alt="다음 버튼"></div>
+                            </section>
+                        </div>
+                    </div>
+                </article>
+                <!-- //서브페이지 본문 -->
+            </div>
+            
+        </main>
+
+        <footer class="footer includeJs" data-include-file="/html/include/footer.html"></footer>
+    </div>
+    <script src="/js/main.js"></script>
+    
+    <script>
+        var swiper = new Swiper(".facility-thumbnail__swiper", {
+            loop: true,
+            spaceBetween: 5,
+            slidesPerView: 2,
+            freeMode: true,
+            watchSlidesProgress: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            }
+        });
+        var swiper2 = new Swiper(".facility-slide", {
+            loop: true,
+            spaceBetween: 10,
+            thumbs: {
+                swiper: swiper,
+            },
+            navigation: {
+                prevEl: ".facility-thumbnail__prev",
+                nextEl: ".facility-thumbnail__next",
+            },
+        });
+    </script>
+</body>
+</html>

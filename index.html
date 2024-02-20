@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+
+    <!-- Title -->
+    <title>테스트</title>
+
+    <!-- CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <!-- JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header
+        class="header includeJs"
+        data-include-file="/include/header.html"
+      ></header>
+
+      <main class="container main">
+        <!-- 메인 슬라이드 -->
+        <article class="slide-main">
+          <h2 class="blind">메인 배너</h2>
+          <div class="slide-main__wrapper swiper-wrapper">
+            <section class="slide-main__item swiper-slide">
+              <div class="inner">
+                <div class="slide-main__txt">
+                  <h3 class="slide-main__tit">
+                    우리 아이들 건강<br />
+                    <em class="slide-main__em">코끼리소아청소년과의원</em
+                    >이<br />
+                    함께 합니다.
+                  </h3>
+                  <hr class="slide-main__hr slide-main__hr--color-secondary" />
+                  <p class="slide-main__para">
+                    우리 아이들의 꿈과 행복을 위해 코끼리소아과는<br />
+                    부모님들과 같은 마음으로 항상 정성을 다해 노력하겠습니다.
+                  </p>
+                </div>
+              </div>
+              <picture class="slide-main__picture">
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/img/main/m/main_slide1.jpg"
+                  class="slide-main__source"
+                />
+                <img
+                  src="/img/main/main_slide1.jpg"
+                  alt=""
+                  class="slide-main__img"
+                />
+              </picture>
+            </section>
+            <section class="slide-main__item swiper-slide">
+              <div class="inner">
+                <div class="slide-main__txt">
+                  <h3 class="slide-main__tit">
+                    우리 아이들 건강<br />
+                    <em class="slide-main__em">코끼리소아청소년과의원</em
+                    >이<br />
+                    함께 합니다.
+                  </h3>
+                  <hr class="slide-main__hr slide-main__hr--color-secondary" />
+                  <p class="slide-main__para">
+                    우리 아이들의 꿈과 행복을 위해 코끼리소아과는<br />
+                    부모님들과 같은 마음으로 항상 정성을 다해 노력하겠습니다.
+                  </p>
+                </div>
+              </div>
+              <picture class="slide-main__picture">
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/img/main/m/main_slide1.jpg"
+                  class="slide-main__source"
+                />
+                <img
+                  src="/img/main/main_slide1.jpg"
+                  alt=""
+                  class="slide-main__img"
+                />
+              </picture>
+            </section>
+            <section class="slide-main__item swiper-slide">
+              <div class="inner">
+                <div class="slide-main__txt">
+                  <h3 class="slide-main__tit">
+                    우리 아이들 건강<br />
+                    <em class="slide-main__em">코끼리소아청소년과의원</em
+                    >이<br />
+                    함께 합니다.
+                  </h3>
+                  <hr class="slide-main__hr slide-main__hr--color-secondary" />
+                  <p class="slide-main__para">
+                    우리 아이들의 꿈과 행복을 위해 코끼리소아과는<br />
+                    부모님들과 같은 마음으로 항상 정성을 다해 노력하겠습니다.
+                  </p>
+                </div>
+              </div>
+              <picture class="slide-main__picture">
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/img/main/m/main_slide1.jpg"
+                  class="slide-main__source"
+                />
+                <img
+                  src="/img/main/main_slide1.jpg"
+                  alt=""
+                  class="slide-main__img"
+                />
+              </picture>
+            </section>
+          </div>
+          <div class="slide-main__btn">
+            <div class="slide-main__pagination"></div>
+            <div class="slide-main__mediaControl">
+              <button type="button" class="slide-main__pause">정지</button>
+              <button type="button" class="slide-main__play">시작</button>
+            </div>
+          </div>
+          <script>
+            const swiper = new Swiper('.slide-main', {
+              // cssMode: true,
+              loop: true,
+              // mousewheel: true,
+              keyboard: true,
+              pagination: {
+                el: '.slide-main__pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                  return (
+                    '<span class="' + className + '">' + (index + 1) + '</span>'
+                  );
+                },
+              },
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
+              },
+            });
+
+            $('.slide-main__pause').click(function () {
+              swiper.autoplay.stop();
+            });
+
+            $('.slide-main__play').click(function () {
+              swiper.autoplay.start();
+            });
+          </script>
+        </article>
+        <!-- //메인 슬라이드 -->
+
+        <!-- 메인 그리드 -->
+        <article class="main-grid">
+          <h2 class="blind">병원 검진 리스트</h2>
+          <div class="inner">
+            <div class="main-grid__wrapper">
+              <section class="main-grid__item main-grid__item--light">
+                <h3 class="main-grid__tit">전문클리닉</h3>
+                <h4 class="main-grid__sub-tit">질환별 전문 클리닉</h4>
+                <p class="main-grid__para">
+                  아이질환에 맞는<br />
+                  전문화된 코끼리소아과를<br />
+                  체험하세요.
+                </p>
+                <a href="" class="more">더보기</a>
+              </section>
+              <section class="main-grid__item main-grid__item--warning">
+                <h3 class="main-grid__tit">건강검진</h3>
+                <h4 class="main-grid__sub-tit">영유아건강검진</h4>
+                <p class="main-grid__para">
+                  우리아이 정상정인<br />
+                  성장발달에 도움이 되는<br />
+                  영유아건강검진
+                </p>
+                <a href="" class="more">더보기</a>
+              </section>
+              <section
+                class="main-grid__item main-grid__item--success main-grid__item--bgi"
+              >
+                <h3 class="main-grid__tit">건강검진</h3>
+                <h4 class="main-grid__sub-tit">종합건강진단센터</h4>
+                <p class="main-grid__para">
+                  코끼리소아과의 종합건강<br />
+                  진단센터의 친절한 서비스를<br />
+                  받아보세요.
+                </p>
+                <a href="" class="more">더보기</a>
+              </section>
+              <section
+                class="main-grid__item main-grid__item--danger main-grid__item--bgi"
+              >
+                <h3 class="main-grid__tit">예방접종</h3>
+                <h4 class="main-grid__sub-tit">예방접종센터</h4>
+                <p class="main-grid__para">
+                  우리아이 건강을 책임질<br />
+                  든든한 코끼리소아과<br />
+                  예방접종센터
+                </p>
+                <a href="" class="more">더보기</a>
+              </section>
+            </div>
+          </div>
+        </article>
+        <!-- //메인 그리드 -->
+
+        <!-- 서브 그리드 -->
+        <article class="sub-grid">
+          <h2 class="blind">진료안내 및 병원 환경</h2>
+          <div class="inner">
+            <div class="sub-grid__wrapper">
+              <section class="sub-grid__item sub-grid__item--info">
+                <h4 class="sub-grid__tit">진료안내</h4>
+                <p class="sub-grid__para">
+                  코끼리소아과의 진료안내와 진료예약을 보다 자세하게
+                  알려드립니다.
+                </p>
+              </section>
+              <section class="sub-grid__item sub-grid__item--webzine">
+                <h4 class="sub-grid__tit">웹진</h4>
+                <p class="sub-grid__para">
+                  코끼리소아과에서 소아건강정보와 건강소식을 제공합니다.
+                </p>
+              </section>
+              <section class="sub-grid__item sub-grid__item--lookAround">
+                <h4 class="sub-grid__tit">병원 둘러보기</h4>
+                <p class="sub-grid__para">
+                  환영합니다. 처음 오셨나요? 진료전 미리 내원해보세요.
+                </p>
+              </section>
+            </div>
+          </div>
+        </article>
+        <!-- //서브 그리드 -->
+
+        <!-- 휴원안내 -->
+        <article class="closed-info">
+          <div class="inner">
+            <div class="closed-info__wrapper">
+              <h4 class="badge badge--size-l badge--bgc-danger">휴원안내</h4>
+              <p class="closed-info__txt">
+                <strong class="closed-info__strong"
+                  >9/24(월) ~ 9/26(수) 3일</strong
+                >간 연휴로 휴원하게 됨을 미리 알려드립니다.
+              </p>
+            </div>
+          </div>
+        </article>
+        <!-- //휴원안내 -->
+
+        <!-- 병원소식, 예약 및 상담 -->
+        <article class="news-consulting">
+          <h2 class="blind">병원 소식 및 예약 전화번호</h2>
+          <div class="inner">
+            <!-- 병원 소식 -->
+            <section class="hospital-news">
+              <h4 class="txt-half">
+                병원<span class="txt-half--color-success">소식</span>
+              </h4>
+              <div class="notice-list">
+                <ul class="notice-list__wrapper">
+                  <li class="notice-list__item">
+                    <p class="notice-list__para">
+                      [공지] 2018년 05월 진료일정 안내 (05.10 수정)
+                    </p>
+                    <span class="notice-list__date">2018-05-18</span>
+                  </li>
+                  <li class="notice-list__item">
+                    <p class="notice-list__para">
+                      [공지] 2018년 05월 진료일정 안내
+                    </p>
+                    <span class="notice-list__date">2018-05-04</span>
+                  </li>
+                  <li class="notice-list__item">
+                    <p class="notice-list__para">
+                      신임과장 진료 안내 (7진료실 최윤정 과장)
+                    </p>
+                    <span class="notice-list__date">2018-04-16</span>
+                  </li>
+                  <li class="notice-list__item">
+                    <p class="notice-list__para">
+                      독감(인플루엔자) 예방접종 시행
+                    </p>
+                    <span class="notice-list__date">2018-03-22</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="" class="more">더보기</a>
+            </section>
+            <!-- //병원 소식 -->
+
+            <!-- 예약 및 상담 -->
+            <section class="reservation-consulting">
+              <h4 class="txt-half">
+                예약 및 <span class="txt-half--color-danger">상담</span>
+              </h4>
+              <p class="reservation-consulting__desc">
+                문의해주시면 친절히 답변해드리겠습니다.
+              </p>
+              <div
+                class="reservation-consulting__item reservation-consulting__tel-time"
+              >
+                <div class="reservation-consulting__main">대표전화</div>
+                <div class="reservation-consulting__sub">
+                  <div class="reservation-consulting__tel">
+                    <span
+                      class="reservation-consulting__numb reservation-consulting__numb--dark"
+                      >031</span
+                    >
+                    <span
+                      class="reservation-consulting__numb reservation-consulting__numb--danger"
+                      >407</span
+                    >
+                    <span
+                      class="reservation-consulting__numb reservation-consulting__numb--danger"
+                      >1178</span
+                    >
+                  </div>
+                  <div class="reservation-consulting__time">
+                    평일 08:20 ~ 12:30 / 13:30 ~ 21:30
+                  </div>
+                </div>
+              </div>
+              <div
+                class="reservation-consulting__item reservation-consulting__checkup"
+              >
+                <div class="reservation-consulting__main">건진센터</div>
+                <div class="reservation-consulting__sub">02.705.9100</div>
+              </div>
+              <div
+                class="reservation-consulting__item reservation-consulting__fax"
+              >
+                <div class="reservation-consulting__main">FAX</div>
+                <div class="reservation-consulting__sub">02.703.2976</div>
+              </div>
+            </section>
+            <!-- //예약 및 상담 -->
+          </div>
+        </article>
+        <!-- //병원소식, 예약 및 상담 -->
+
+        <!-- 오시는길 -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.0170841081735!2d127.11131181558106!3d37.19982365280131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6ed3d0013ea9%3A0x65e045922b797963!2z7L2U64G866as7IaM7JWE7LKt7IaM64WE6rO87J2Y7JuQ!5e0!3m2!1sko!2skr!4v1672810955528!5m2!1sko!2skr"
+            class="map__iframe"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="inner">
+            <div class="directions">
+              <h4 class="directions__tit">오시는 길</h4>
+              <address class="directions__item directions__address">
+                <p class="directions__para">
+                  경기도 안산시 상록구 샘골로 142 동보프라자 2층
+                </p>
+              </address>
+              <div class="directions__item directions__time">
+                <p class="directions__para">평일 오전 : 08 : 20 ~ 21 : 30</p>
+                <p class="directions__para">토요일 : 09: 00 ~ 16 : 00</p>
+                <p class="directions__para">
+                  일요일 : 09 : 00 ~ 13 : 00 (공휴일 포함)
+                </p>
+                <hr class="directions__hr" />
+                <p class="directions__para">점심 : 12 : 30 ~ 13 : 30</p>
+                <p class="directions__para">석식 : 17 : 00 ~ 18 : 00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 오시는길 -->
+      </main>
+
+      <footer
+        class="footer includeJs"
+        data-include-file="/include/footer.html"
+      ></footer>
+    </div>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

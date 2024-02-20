@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+
+	<!-- Title -->
+	<title>테스트</title>
+
+	<!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+	<!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header includeJs" data-include-file="/html/include/header.html"></header>
+        
+        <main class="container sub">
+            <div class="inner">
+                <aside class="aside aside--hospital-info">
+                    <h2 class="aside__tit">병원안내</h2>
+                    <ul class="snb">
+                        <li class="snb__item">
+                            <a href="" class="snb__link">인사말</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">병원알림</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">진료안내</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">시설안내</a>
+                        </li>
+                        <li class="snb__item active">
+                            <a href="" class="snb__link">오시는길</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">병원소식</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">자주찾는질문</a>
+                        </li>
+                    </ul>
+                </aside>
+                <!-- 서브페이지 본문 -->
+                <article class="substance">
+                    <div class="substance__head">
+                        <h3 class="substance__tit">오시는길</h3>
+                        <div class="location">
+                            <span class="location__item location__home"><img src="/img/common/home.png" alt="홈"></span>
+                            <span class="location__item location__middle">병원안내</span>
+                            <span class="location__item location__current">오시는길</span>
+                        </div>
+                    </div>
+                    <div class="substance__body">
+                        <div class="way-come">
+                            <div class="come-info">
+                                <div class="map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.0170841081735!2d127.11131181558106!3d37.19982365280131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6ed3d0013ea9%3A0x65e045922b797963!2z7L2U64G866as7IaM7JWE7LKt7IaM64WE6rO87J2Y7JuQ!5e0!3m2!1sko!2skr!4v1672810955528!5m2!1sko!2skr" class="map__iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <div class="come-info__btm">
+                                    <div class="come-info__box flex">
+                                        <section class="come-info__item come-info__item--address">
+                                            <h4 class="come-info__tit come-info__tit">주소</h4>
+                                            <p class="para">
+                                                경기도 화성시 동탄대로시범길 142 센텀프라자
+                                                2층 206,207호 코끼리소아청소년과의원
+                                            </p>
+                                        </section>
+                                        <section class="come-info__item come-info__item--tel">
+                                            <h4 class="come-info__tit">대표 상담전화</h4>
+                                            <p class="para">031-376-0669</p>
+                                        </section>
+                                    </div>
+                                    <div class="come-info__box">
+                                        <section class="come-info__item come-info__item--bus">
+                                            <h4 class="come-info__tit">찾아오시는 길</h4>
+                                            <p class="come-info__sub-tit">주변 정류장</p>
+                                            <ul class="come-info__station flex para">
+                                                <li class="come-info__station-li">우성아파트 104동 앞</li>
+                                                <li class="come-info__station-li">한양아파트</li>
+                                                <li class="come-info__station-li">우성아파트 건너편</li>
+                                                <li class="come-info__station-li">신안아파트 앞</li>
+                                                <li class="come-info__station-li">신안인스빌 2단지</li>
+                                                <li class="come-info__station-li">우성아파트 정문</li>
+                                            </ul>
+                                            <div class="bus-info">
+                                                <span class="badge badge--size-xs badge--bgc-success">일반<span class="blind">버스</span></span>
+                                                <ul class="bus-info__wrapper flex para">
+                                                    <li class="bus-info__item">101,</li>
+                                                    <li class="bus-info__item">125,</li>
+                                                    <li class="bus-info__item">22,</li>
+                                                    <li class="bus-info__item">23,</li>
+                                                    <li class="bus-info__item">31,</li>
+                                                    <li class="bus-info__item">52,</li>
+                                                    <li class="bus-info__item">66,</li>
+                                                    <li class="bus-info__item">71,</li>
+                                                    <li class="bus-info__item">71-1,</li>
+                                                    <li class="bus-info__item">71-2,</li>
+                                                    <li class="bus-info__item">76,</li>
+                                                    <li class="bus-info__item">99,</li>
+                                                    <li class="bus-info__item">99-1,</li>
+                                                    <li class="bus-info__item">511</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bus-info">
+                                                <span class="badge badge--size-xs badge--bgc-primary">좌석<span class="blind">버스</span></span>
+                                                <ul class="bus-info__wrapper flex para">
+                                                    <li class="bus-info__item">301</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- //서브페이지 본문 -->
+            </div>
+        </main>
+
+        <footer class="footer includeJs" data-include-file="/html/include/footer.html"></footer>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

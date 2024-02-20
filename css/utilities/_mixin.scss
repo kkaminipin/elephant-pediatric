@@ -1,0 +1,220 @@
+/*
+@mixin flex ($justify: normal, $align: center) {
+    justify-content: $justify;
+    align-items: $align;
+    @content;
+}
+*/
+
+
+@mixin ellipsis($lines: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @if ($lines == 1) {      
+        white-space: nowrap;
+    } 
+    @else {
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+}
+
+@mixin circle ($bg) {
+    $circleSize: 28%;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100% - $circleSize / 2;
+        transform: translateY(-50%);
+        width: $circleSize;
+        padding-top: $circleSize;
+        border-radius: 50%;
+        background-color: $bg;
+    }
+}
+
+@mixin bar ($height, $padding, $margin, $bg, $top: 50%, $transform: translateY(-50%), $width: 0.1rem) {
+    position: relative;
+    padding-right: $padding;
+    margin-right: $margin;
+    &::after {
+        content: '';
+        position: absolute;
+        top: $top;
+        right: 0;
+        transform: $transform;
+        width: $width;
+        height: $height;
+        background-color: $bg;
+    }
+    &:last-of-type {
+        padding-right: 0;
+        margin-right: 0;
+        &::after {
+            display: none;
+        }
+    }
+}
+
+@mixin dot ($size, $bgc, $radius: 50%, $top: 50%) {
+    &::before {
+        content: '';
+        position: absolute;
+        top: $top;
+        left: 0;
+        width: $size;
+        height: $size;
+        background-color: $bgc;
+        border-radius: $radius;
+        @if ($top == 50) {
+            transform: translateY(-50%);
+        }
+    }
+}
+
+@mixin angel ($direction, $size, $thick, $color) {
+    &::after {
+        @content;
+        content: '';
+        position: absolute;
+        width: $size;
+        height: $size;
+        border-width: $thick $thick 0 0;
+        border-style: solid;
+        border-color: $color;
+        @if ($direction == 'top') {
+            transform: rotate(-45deg);
+        }
+        @else if ($direction == 'bottom') {
+            transform: rotate(135deg);
+        }
+        @else if ($direction == 'right') {
+            transform: rotate(45deg);
+        }
+    }    
+}
+
+
+@mixin clamp ($width, $height, $margin, $direction, $double, $bdc: #666) {
+    @if ($double == 'true') {
+        &::before {
+            content: '';
+            display: block;
+            width: $width;
+            height: $height;
+            border-width: 0.1rem 0.1rem 0 0;
+            border-style: solid;
+            border-color: $bdc;        
+            @if ($direction == 'top') {
+                transform: rotate(315deg);
+            }
+            @else if ($direction == 'right') {
+                transform: rotate(45deg);
+                margin-left: $margin
+            }        
+            @content;
+        }       
+    }   
+    &::after {
+        content: '';
+        display: block;
+        width: $width;
+        height: $height;
+        border-width: 0.1rem 0.1rem 0 0;
+        border-style: solid;
+        border-color: $bdc;
+        @if ($direction == 'top') {
+            transform: rotate(315deg);
+        }
+        @else if ($direction == 'right') {
+            transform: rotate(45deg);
+            margin-left: $margin
+        }
+        @content;
+    }
+}
+
+
+@mixin closeBtn ($size) {
+    width: $size;
+    height: $size;
+    &__btn {
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: $size / 2;
+            width: 100%;
+            height: $size / 10 + 0.1;
+            background-color: #fff;
+        }
+        &::before {                
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+@mixin plusBtn ($size) {
+    position: relative;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;   
+    }
+    &::before {
+        width: $size;
+        height: 0.2rem;
+    }
+    &::after {
+        width: 0.2rem;
+        height: $size;
+    }
+}
+
+@mixin minusBtn () {
+    
+}
+
+
+
+@mixin pc {
+    @media (max-width: #{map-get($responsive, pc)}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{map-get($responsive, tablet)}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{map-get($responsive, mobile)}) {
+        @content;
+    }
+}
+
+@mixin mobileS {
+    @media (max-width: #{map-get($responsive, mobileS)}) {
+        @content;
+    }
+}
+
+@mixin bgi ($path, $name, $format: 'png') {
+    background-image: url('/img/#{$path}/#{$name}.#{$format}');
+}
+
+@mixin ftw ($ftw) {
+    font-weight: $ftw;
+}
+
+@mixin fts ($fts) {
+    font-size: $fts;
+}

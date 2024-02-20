@@ -1,0 +1,2019 @@
+@charset "utf-8";
+
+
+
+@import "utilities/variables";
+@import "utilities/mixin";
+@import "utilities/extend";
+
+@import "base/reset";
+@import "base/common";
+
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/footer";
+@import "layout/aside";
+
+@import "components/badge";
+@import "components/buttons";
+@import "components/pagination";
+@import "components/more";
+@import "components/slider";
+
+/*
+base/: 리셋이나 노멀라이즈, 또는 아주 기본으로 쓰일 스타일(타이포그래피 등)
+helpers/: 직접 스타일을 적용하지 않지만 개발에 필요한 스타일(믹스인, 함수 등)
+components/: 말그대로 개별 컴포넌트!
+pages/: 말그대로 개별 페이지!
+vendors/: 외부 라이브러리 등을 사용하는 경우 필요한 스타일
+styles.scss: 컴파일할 스타일시트
+*/
+
+
+/* 공통 */
+:root {
+    --header-height: 8.7rem;
+    @include mobile () { 
+        --header-height: 6rem;
+    }
+}
+
+
+@for $i from 1 through 192 {
+    .width#{$i} {
+        width: #{$i}rem;
+    }
+}
+
+.wrap {
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+.inner {
+    position: relative;
+    max-width: calc(113.6rem + 3rem);
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.container {
+    margin-top: 8.8rem;
+    @include mobile () {
+        margin-top: 6.1rem;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hamburger {
+    $width: 2.3rem;
+    $height: 0.2rem;
+    $color: #666;
+    display: none;
+    position: relative;
+    width: $width;
+    height: 1.8rem;
+    @include mobile () {
+        display: block;
+    }  
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: $width;
+        height: $height;
+        background-color: $color;
+    }
+    &::before {
+        top: 0;
+    }
+    &__line {
+        position: absolute;
+        top: 0.8rem;
+        left: 0;
+        width: $width;
+        height: $height;
+        background-color: $color;
+    }
+    &::after {
+        bottom: 0;
+    }
+}
+
+.close {
+    $size: 2.4rem;
+    width: $size;
+    height: $size;
+    &__line {
+        position: relative;
+        right: $size / 2;
+        &::before, &::after {
+            content: '';            
+            position: absolute;
+            top: 0;
+            width: $size;
+            height: 0.1rem;
+            background-color: #fff;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+/* 메인페이지 */
+.main {
+    background-color: #f4f4f4;
+
+    /* 메인 그리드 */
+    .main-grid {
+        position: relative;
+        z-index: 1;
+        margin-top: -18.8rem;
+        @include mobile () {
+            margin-top: -8rem;
+        }
+    }   
+    /* 서브 그리드 */
+    .sub-grid {
+        margin-top: 5rem;
+        @include mobile () {
+            margin-top: 1.5rem;   
+        }
+    }
+
+    /* 휴원안내  */
+    .closed-info {
+        margin-top: 5rem;
+        @include mobile () {
+            margin-top: 1.5rem;   
+        }
+    }
+
+    /* 병원소식, 예약 및 상담 */
+    .news-consulting {
+        margin-top: 5rem;
+        background-color: #fff;
+        @include mobile () {
+            margin-top: 1.5rem;
+        }
+        .inner {
+            display: flex;
+            justify-content: space-between;
+            padding: 4.5rem 0;
+            @include mobile () {
+                display: block;
+                padding: 0;
+            }
+        }
+    }
+
+    /* 병원 소식 */
+    .hospital-news {
+        width: 45%;
+        padding-left: 4.5%;
+        @include mobile () {
+            width: 100%;
+            padding: 1.5rem;
+        }
+    }
+    /* 예약 및 상담 */
+    .reservation-consulting {
+        width: 45%;
+        padding-right: 4.5%;
+        @include mobile () {
+            width: 100%;
+            padding: 1.5rem;
+            border-top: 0.1rem solid #ddd;
+        }
+    }
+    /* 지도 */
+    .map {
+        height: 35rem;
+        @include mobile () {
+            display: none;
+        }
+    }
+}
+/* //메인페이지 */
+
+/* 서브페이지 */
+.sub {
+    padding: 4.5rem 0;
+    @include mobile () {
+        padding: 3rem 0
+    }
+    .inner {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* 서브페이지 본문 영역 */
+.substance {
+    width: calc(100% - 23rem);
+    @include mobile () {
+        width: 100%;
+    }
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 2.2rem 0;
+        margin-bottom: 4rem;
+        border-bottom: 0.1rem solid #dcdcdc;
+        @include mobile () {
+            padding: 0;
+            margin-bottom: 3rem;
+            border-bottom: none;
+        }
+    }
+    &__tit {
+        font: {
+            weight: 300;
+            size: 4rem;
+        }
+        color: map-get($color, primary);
+        letter-spacing: -0.075rem;
+        @include mobile () {
+            font-size: 3rem;
+        }
+    }    
+}
+
+/* 병원안내 */
+/* 인사말 배너 */
+.sub-banner {
+    display: flex;
+    align-items: center;
+    height: 28.3rem;
+    border-radius: 1.2rem;
+    background-repeat: no-repeat;
+    background-position: right 10% bottom;
+    &--skin {
+        background-color: #fadbc9;
+        @include bgi('greetings', 'family');
+    }
+    &__quote {
+        padding-left: 8%;
+        padding-right: 33%;
+        font: {
+            weight: 300;
+            size: 3rem;
+        }
+        color: map-get($color, primary);
+        letter-spacing: -0.075rem;
+        word-break: keep-all;
+    }
+    &__em {
+        font-weight: 700;
+        color: #ff4a40;
+    }
+}
+
+/* //인사말 */
+.greetings {
+    &__hr {
+        width: 100%;
+        height: 0.1rem;
+        margin: 3.5rem 0;
+        background-color: #dcdcdc;
+    }
+    &__cont {
+        padding-top: 3.5rem;
+        margin-top: 3.5rem;
+        border-top: 0.1rem solid #dcdcdc;
+        &:first-of-type {
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+    .para {
+        margin-top: 2rem;
+    }
+}
+
+/* 미션 비전 */
+.mission-vision {
+    &__tit {
+        font: {
+            weight: 300;
+            size: 2rem;
+        }
+        color: #f7918d;
+        letter-spacing: -0.05rem;
+    }
+    &__item {
+        margin-top: 3.5rem;
+    }
+}
+
+/* 비전 */
+.vision-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 15%;
+    margin-top: 1.5rem;
+    &__item {
+        $class: 'danger', 'warning', 'success';
+        $color: #fb6860,#f4d34e,#18caa6;
+        $bgi: 'examination_machine', 'love_hospital','handshake';
+        $icon-height: 75, 76, 66;
+        $rainbow: 'line_rainbow';
+        @for $i from 1 through length($class) {
+            &--#{nth($class, $i)} {
+                .vision-info__circle {
+                    background-color: nth($color, $i);
+                    &::before {
+                        @include bgi('common', $rainbow + $i);
+                    }
+                    &::after {
+                        background-color: nth($color, $i);
+                    }
+                }
+                .vision-info__tit {
+                    &::before {
+                        padding-top: calc(#{nth($icon-height, $i)} / 211 * 100%);
+                        @include bgi('greetings', nth($bgi, $i));
+                    }
+                }
+            }
+        }
+        flex-grow: 1;
+        flex-basis: 0;        
+        text-align: center;
+        &--success {
+            .vision-info__circle::before {
+                display: none;
+            }
+        }
+    }
+    &__circle {
+        position: relative;
+        padding-top: calc(100% / 1 * 1);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 30%;
+        border-radius: 50%;         
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 5%);
+            transform: translateY(-50%);
+            width: 54%;
+            height: 0.5rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(100% + 2rem);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2.7rem;
+            height: 0.2rem;
+        }
+    }
+    &__tit {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;        
+        font: {
+            weight: 700;
+            size: clamp(1rem, 1.1vw, 3rem);
+        }
+        color: #fff;
+        letter-spacing: -0.075rem;
+        text-align: center;
+        &::before {
+            display: block;
+            content: '';
+            margin-bottom: 5%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+    .para {
+        margin-top: 4rem;
+    }
+}
+/* //인사말 */
+
+/* 병원알림 */
+.hospital-notice {
+    $class: 'injection-blood', 'fluid-therapy', 'atopic-treatment', 'health-screenings';
+    $bgc: #fef6f6, #fdfbf2, #f0f4f3, #edf7fb;
+    $ftc: #fb6860,  #efc202, #18cba6, #479ccf;
+    &__item {        
+        @for $i from 1 through length($class) {
+            &--#{nth($class, $i)} {
+                background-color: nth($bgc, $i);
+                @include bgi('common', 'bg_notice_row_type' + $i);
+                background-repeat: no-repeat;
+                background-position: left 4rem center;
+                @include mobile () {
+                    background-position: center top 2.5rem;
+                }                
+                .hospital-notice__tit {
+                    color: nth($ftc, $i);
+                }                
+            }
+        }
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        min-height: 21.9rem;
+        padding: 2rem 2rem 2rem 22rem;
+        margin-top: 3rem;
+        border-radius: 1.5rem;
+        @include mobile () {
+            padding: 17rem 1.5rem 1.5rem;
+        }
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+    &__tit {
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        letter-spacing: -0.05rem;
+    }
+    &__para {
+        position: relative;
+        word-break: keep-all;
+        br {
+            @include tablet () {
+                display: none;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);            
+        }
+    }
+}
+/* //병원알림 */
+
+/* 진료안내 */
+.treatment-info {
+    %bgi-padding {
+        min-height: 29rem;
+        padding-right: 48%;
+        background-size: 46%;
+        @include mobile () {
+            min-height: auto;
+            padding-right: 0;
+            padding-top: 38%;
+            background-size: 54%;
+        }
+        @include mobileS () {
+            padding-top: 70%;
+            background-size: 100%;
+        }
+    }
+    &__item {
+        margin-top: 6.5rem;
+        background-repeat: no-repeat;
+        background-position: right center;
+        @include mobile () {
+            margin-top: 4.5rem;
+            background-position: left top;
+        }
+        &:first-of-type {
+            margin-top: 0;
+        }
+        &--time-info {
+            .diagnosis-time {
+                margin-top: 3rem;
+            }
+        }
+        &--nutrient-cure {
+            .nutrient-treat {
+                margin-top: 4.5rem;
+            }
+        }
+        &--blood-collection {
+            @extend %bgi-padding;
+            @include bgi('treat_info', 'medical');
+        }
+        &--associated-treat {
+            @extend %bgi-padding;
+            @include bgi('treat_info', 'medical2');
+        }
+        .para {
+            margin-top: 2rem;
+        }
+    }
+    &__para {
+        word-break: keep-all;
+    }
+}
+
+/* 진료시간 안내 */
+.diagnosis-time {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    @include mobile () {
+        border-radius: 0;
+    }
+    &__tr {
+        flex-grow: 1;
+        flex-basis: 0;
+        &:first-of-type {                        
+            .diagnosis-time__td {
+                border-left: 0.1rem solid #ddd;
+                border-radius: 0 0 0 1.5rem;
+                @include mobile () {
+                    border-radius: 0;
+                }
+            }
+        }
+        &:nth-of-type(4) {
+            .diagnosis-time__th {
+                @include mobile () {
+                    border-right: 0.1rem solid transparent;
+                }
+            }
+        }
+        &--etc {
+            flex-grow: 1.9;            
+            .diagnosis-time__th {
+                border-right: none;
+            }
+            .diagnosis-time__td {
+                border-radius: 0 0 1.5rem;
+                @include mobile () {
+                    border-left: 0.1rem solid #ddd;
+                    border-radius: 0;
+                }
+            }
+            .diagnosis-time__treat {
+                font-weight: 300;
+            }
+            @include mobile () {
+                flex-basis: 100%;
+            }
+        }
+    }
+    &__th {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 4.3rem;
+        background-color: #f7918d;
+        border-right: 0.1rem solid #fff;
+        font-size: 1.6rem;
+        color: #fff;
+        letter-spacing: -0.05rem;
+        &::after {
+            display: none;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0.1rem;
+            height: 100%;
+            background-color: #fff;
+        }
+    }
+    &__td {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - 4.3rem);
+        padding: 1rem 0.5rem;
+        border-right: 0.1rem solid #ddd;
+        border-bottom: 0.1rem solid #ddd;
+        font-size: 1.4rem;
+        text-align: center;
+        word-break: keep-all;
+    }
+    &__treat {
+        color: map-get($color, primary);
+        
+    }
+    &__lunch {
+        font-weight: 300;
+        color: #888;
+    }
+    &__etc {
+        font-weight: 300;
+        color: map-get($color, primary);
+    }
+}
+
+
+/* 정맥영양수액치료 */
+.nutrient-treat {
+    $class: 'success', 'danger', 'warning';
+    $color: #18caa6, #fb6860, #f2d44e;
+    $bgc: #effbf9, #fff0ef, #fefbed;
+    display: flex;
+    justify-content: space-between;
+    @include mobile () {
+        display: block;
+    }
+    &__item {
+        @for $i from 1 through length($class) {
+            &--#{nth($class, $i)} {
+                background-color: nth($bgc, $i);
+                    border-color: nth($color, $i);
+                .nutrient-treat__tit {
+                    background-color: nth($color, $i);
+                }
+                .nutrient-treat__li {                    
+                    &::before {
+                        background-color: nth($color, $i);
+                    }
+                }
+            }
+        }
+        flex-grow: 1;
+        flex-basis: 0;
+        position: relative;
+        margin-right: 3.5rem;
+        border-width: 0.1rem;
+        border-style: solid;
+        border-radius: 1.5rem;
+        @include mobile () {
+            margin-right: 0;
+            margin-bottom: 3rem;
+        }
+        &:last-of-type {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+    /* 타이틀 높이 */
+    &__tit {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        padding: 0.4rem 0;
+        margin: 0 auto;
+        border-radius: 1.5em;
+        font-size: 1.6rem;
+        color: #fff;
+        text-align: center;
+        word-break: keep-all;
+    }
+    &__ul {
+        padding: 3rem 2rem 1.5rem;        
+    }
+    &__li {
+        position: relative;
+        padding-left: 1.2rem;
+        margin-top: 1rem;
+        font: {
+            weight: 300;
+            size: 1.4rem;
+        }
+        vertical-align: middle;
+        &:first-of-type {
+            margin-top: 0;
+        }
+        @include dot ($size: 0.5rem, $top: 0.7rem, $bgc: transparent);
+        /*
+        &::before {
+            flex-shrink: 0;
+            display: block;
+            content: '';
+            margin-top: 0.8rem;
+            margin-right: 0.7rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 0.3rem;
+            vertical-align: middle;
+        }
+        */
+    }
+}
+/* //진료안내 */
+
+/* 시설 안내 */
+/* 시설 안내 배너 슬라이드 */
+.facility-slide {
+    border-radius: 1.2rem;
+    &__wrapper {
+        
+    }
+    &__item {
+        
+    }    
+    &__txt {
+        padding: 1rem 2rem;
+        border: 0.1rem solid #ddd;
+        border-radius: 0 0 1.2rem 1.2rem;
+        font-size: 1.8rem;
+        color: map-get($color, secondary);
+        letter-spacing: -0.05rem;
+        &--em {
+            color: #fc6760;
+        }
+    }
+}
+/* 시설 안내 섬네일 슬라이드 */
+.facility-thumbnail {
+    position: relative;
+    &__swiper {
+        width: calc(100% - 12rem);
+        margin: 3rem auto 0;
+        @include mobile () {
+            width: calc(100% - 9rem);
+            margin: 2rem auto 0;
+        }
+    }    
+    &__item {
+        opacity: 0.3;
+        height: 16.5rem;
+        @include mobile () {
+            height: auto;
+        }
+        &.swiper-slide-thumb-active {
+            opacity: 1;
+        }
+        img {
+            object-fit: cover;
+            height: 100%;
+            border-radius: 1.2rem;
+            @include mobile () {
+                border-radius: 0.6rem;
+            }
+        }
+    }
+    &__arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        width: 4rem;
+        height: 100%;
+        background-color: #ffd5d9;
+        border-radius: 1.5rem;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.6rem;
+        }
+    }
+    &__prev {
+        left: 0;
+    }
+    &__next {
+        right: 0;
+    }    
+}
+/* //시설 안내*/
+
+/* 오시는 길 */
+.way-come {
+    .map {
+        height: 44rem;
+    }
+}
+
+.come-info {
+    overflow: hidden;    
+    border: 0.1rem solid #e7e7e7;
+    border-radius: 1.2rem;
+    &__btm {
+        background-color: #f8f8f8;        
+    }
+    &__box {
+        padding: 40px;
+        border-top: 0.1rem solid #e7e7e7;
+        @include mobile () {
+            padding: 2rem;
+        }
+        &.flex {                      
+            @include mobile () {
+                display: block;
+            }
+        }        
+    }
+    &__item {
+        flex-basis: 0%;
+        padding-left: 6.2rem;
+        background-repeat: no-repeat;
+        &--address {
+            flex-grow: 1.5;
+            margin-right: 2%;            
+            @include bgi('common', 'bg_map_address_1');
+        }
+        &--tel {
+            flex-grow: 1;            
+            @include bgi('common', 'bg_map_address_2');
+            @include mobile () {
+                margin-top: 1.5rem
+            }
+        }
+        &--bus {
+            @include bgi('common', 'bg_map_address_3');
+        }
+        background-position: left top 0.3rem;
+        .para {
+            word-break: keep-all;
+        }
+    }
+    &__tit {        
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        color: map-get($color, primary);
+        letter-spacing: -0.05rem;        
+    }
+    &__sub-tit {
+        font-size: 1.6rem;
+        color: map-get($color, primary);
+    }
+    &__station {
+        margin-top: 0.5rem;        
+    }
+    &__station-li {
+        @include bar ($height: 1rem, $padding: 0.7rem, $margin: 0.7rem, $bg: #ddd);
+    }
+}
+
+.bus-info {
+    display: flex;
+    margin-top: 0.5rem;
+    @include mobileS () {
+        display: block;
+    }
+    &:first-of-type {
+        margin-top: 1.2rem;
+    }
+    &__wrapper {
+        @include mobileS () {
+            margin-top: 0.5rem;
+        }
+    }
+    &__item {
+        margin-right: 0.8rem;        
+    }
+    .badge {
+        flex-shrink: 0;
+        margin-top: 0.5rem;
+        margin-right: 1.5rem;
+    }
+}
+/* //오시는 길 */
+
+/* 자주찾는질문 */
+.faq {
+    .list-faq {
+        margin-top: 2rem;
+    }
+}
+
+.list-facility {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-count {
+    font: {
+        weight: 300;
+        size: 1.4rem;
+    }
+    &__txt {        
+        color: map-get($color, primary);
+    }
+    &__numb {
+        font-weight: 400;
+        color: #18cba6;
+    }
+    &__page {
+        color: map-get($color, secondary);
+    }
+}
+
+.list-search {
+    display: flex;    
+    &__item {
+        height: 4rem;
+        padding: 0 1.4rem;
+        border: 0.1rem solid #ddd;
+        border-radius: 1.5rem;
+        font: {
+            weight: 300;
+            size: 1.5rem;
+        }
+        color: map-get($color, primary);
+        letter-spacing: -0.05rem;
+    }
+    &__select {
+        position: relative;
+        width: 11.5rem;           
+        margin-right: 0.5rem;
+    }
+    &__inp-wrapper {
+        position: relative;   
+    }
+    &__inp {
+        width: 24rem;
+        padding-right: 4.5rem;
+    }
+    &__btn {
+        position: absolute;
+        top: 50%;
+        right: 1.8rem;
+        transform: translateY(-50%);
+        width: 2.1rem;
+        height: 2rem;
+        @include bgi('common', 'reading_glasses');
+    }
+}
+
+
+.list-faq {
+    &__ol {
+        border-top: 0.2rem solid map-get($color, secondary);
+    }
+    &__li {                
+        &.active {
+            .list-faq__q::after {
+                transform: rotate(-45deg);
+                margin-top: -0.5rem;
+            }
+            .list-faq__a {
+                display: flex;
+            }
+        }
+    }
+    &__q {
+        display: flex;
+        align-items: center;
+        position: relative;        
+        padding: 2.5rem 10rem 2.5rem 0;
+        border-bottom: 0.1rem solid #dfdfdf;
+        @include angel($direction: bottom, $size: 3rem, $thick: 0.2rem, $color: #888);
+        &::after {
+            top: 50%;
+            right: 4.5%;
+            transform: translateY(-80%) rotate(135deg);
+        }
+        @include mobile () {
+            &::after {
+                width: 2rem;
+                height: 2rem;
+                border-width: 0.1rem 0.1rem 0 0;
+            }
+        }
+        @include mobileS () {
+            &::after {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+    &__a {
+        display: none;
+        padding: 2.5rem 12.5%;
+        background-color: #fbf5e7;
+        border-bottom: 0.1rem solid #dfdfdf;
+    }
+    &__tit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.list-tit {    
+    font-size: 1.6rem;
+    color: map-get($color, primary);
+    &__qa {
+        margin-right: 1rem;
+        font: {
+            weight: 700;
+            size: 1.8rem;
+        }
+    }
+    &__q {
+        color: #fb6860;
+    }   
+    &__a {
+        color: #666;
+    } 
+}
+
+.list-numb {
+    width: 11.5rem;
+    width: 14%;
+    font: {
+        weight: 300;
+        size: 1.6rem;
+    }
+    color: map-get($color, secondary);
+    text-align: center;
+}
+.list-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 12.5%;
+    padding-right: 15%;
+    text-align: left;
+}
+/* //자주찾는질문 */
+
+
+/* 소아내분비 */
+.pediatric-endocrine {
+    .tab {
+        margin-top: 4rem;
+    }
+}
+.children-grow {
+    min-height: 24.5rem;
+    // padding-left: clamp(calc(20rem + 3rem), calc(40% + 3rem), calc(40rem + 3rem));
+    padding-left: calc(44% + 4rem);
+    @include bgi('pediatric_endocrine', 'tree_house');
+    background-repeat: no-repeat;
+    background-size: 44%;
+    .para {
+        margin-top: 2.5rem;
+        letter-spacing: -0.05rem;
+    }
+}
+/* //소아내분비 */
+
+
+.tab {
+    &--color {
+        &-danger {
+            .tab__li {
+                border-bottom: 0.3rem solid #f7918d;
+                &.active {
+                    .tab__btn {
+                        background-color: #f7918d;
+                        border: transparent;
+                    }
+                }
+            }       
+        }
+    }
+    &__ul {
+        display: flex;
+    }
+    &__li {
+        flex-grow: 1;
+        flex-basis: 0%;
+        margin-right: -0.1rem;        
+        &:first-of-type {
+            .tab__btn {
+                border-radius: 0.5rem 0 0;
+            }
+        }
+        &:last-of-type {
+            .tab__btn {
+                border-radius: 0 0.5rem 0;
+            }
+        }
+        &.active {
+            .tab__btn {
+                color: #fff;
+            }
+        }       
+    }
+    &__btn {
+        width: 100%;
+        height: 4.7rem;
+        background-color: #f9f9f9;
+        border: 0.1rem solid #ddd;        
+        border-bottom: none;
+        font-size: 1.8rem;
+        color: #999;
+        letter-spacing: -0.05rem;
+    }
+}
+
+
+.table {
+    &--date {
+        overflow: hidden;
+        border-radius: 1.5rem;
+        thead {
+            tr {
+                th {
+                    height: 4.3rem;
+                    background-color: #f7918d;
+                    border-right: 0.1rem solid #fff;
+                    font-size: 1.6rem;
+                    color: #fff;
+                    letter-spacing: -0.05rem;
+                    &:last-of-type {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    padding: 1.5rem 1rem;
+                    border-bottom: 0.1rem solid #ddd;
+                    border-right: 0.1rem solid #ddd;                    
+                    font-size: 1.4rem;
+                    text-align: center;
+                    &:first-of-type {
+                        border-left: 0.1rem solid #ddd;
+                        border-radius: 0 0 0 1.5rem;
+                    }
+                    &:last-of-type {
+                        border-radius: 0 0 1.5rem;
+                    }
+                    .treat-time {
+                        color: map-get($color, primary);
+                    }
+                    .lunch-time {
+                        font-weight: 300;
+                        color: #888;
+                    }
+                    .etc {
+                        font-weight: 300;
+                        color: map-get($color, primary);
+                    }
+                }
+            }
+        }
+    }        
+}
+
+/* //서브페이지 */
+
+
+.para {
+    line-height: 2.6rem;
+    font: {
+        weight: 300;
+        size: 1.5rem;
+    }
+    color: map-get($color, secondary);
+    &--color {
+        &-danger {
+            color: #ff4a40;
+        }
+    }
+    @include mobile {
+        font-size: 1.4rem;
+     }
+}
+
+
+.tit {
+    font-size: 2.6rem;
+    color: map-get($color, primary);
+    letter-spacing: -0.05rem;
+    &--weight {
+        &-light {
+            font-weight: 300;
+        }
+    }
+    &--color {
+        &-danger {
+            color: #ff4a40;
+        }
+        &-danger100 {
+            color: #ef7770;
+        }
+        &-success {
+            color: #18cba6;
+        }
+    }
+}
+
+/* 현재 위치 */
+.location {
+    display: flex;
+    align-items: center;
+    @include mobile () {
+        display: none;
+    }
+    &__item {
+        position: relative;
+        line-height: 1;
+        margin-right: 1.5rem;
+        font-size: 1.4rem;
+        @include angel ($direction: 'right', $size: 0.9rem, $thick: 0.1rem, $color: #c3c3c3);
+        &::after {
+            top: 0.38rem;
+            padding-right: 0.4rem;
+        }
+        &:last-of-type {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    &__home {
+        
+    }
+    &__middle {
+        font-weight: 300;
+        color: #888;
+    }
+    &__current {
+        color: map-get($color, primary);
+    }
+}
+/* //현재 위치 */
+
+/* 메인 그리드 */
+.main-grid {
+    padding: 0 1.5rem;
+    --size: 33%;
+    @include mobile () {
+        --size: calc(50% - 0.35rem);
+    }
+    .inner {
+        max-width: 113.6rem;
+        padding: 0;
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem 0;
+        @include mobile () {
+            gap: 0.7rem 0;
+        }
+    }
+    &__item {
+        /* 개별 클레스, 백그라운드 컬러, 폰트 컬러*/
+        width: var(--size);
+        height: 37.4rem;
+        padding: 6rem 0 0;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 50%;
+        border-radius: 1.5rem;
+        color: #fff;
+        text-align: center;
+        @include mobile () {
+            height: 16rem;
+            padding: 2.5rem 0 0;
+            border-radius: 1rem;
+        }
+
+        /* 백그라운드 컬러 */
+        &--light {
+            background-color: #fff;
+            color: map-get($color, primary);
+            .main-grid__sub-tit::after {
+                background-color: #939393;
+            }
+            .main-grid__para {
+                color: #999;
+            }
+        }
+        &--success {
+            background-color: #18cba6;
+            @include bgi('main', 'conference', 'jpg');
+            &.main-grid__item--bgi::after {
+                background-color: #18cba6;
+            }
+            .main-grid__para {
+                color: #bdf4e9;
+            }   
+        }
+        &--danger {
+            background-color: #fb6860;
+            @include bgi('main', 'medical', 'jpg');
+            &.main-grid__item--bgi::after {
+                background-color: #fb6860;
+                @include mobile () {
+                    padding-right: 0;
+                    padding-left: 50%;
+                    background-position: left center;
+                }
+            }
+            .main-grid__para {
+                color: #fdcac7;
+            }   
+        }
+        &--warning {
+            background-color: #f3d44f;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            .main-grid__para {
+                color: #fffae6;
+            }              
+            @include mobile () {
+                position: static;
+            }                        
+        }
+        /* 백그라운드 이미지 */
+        &--bgi {
+            position: relative;
+            width: calc(var(--size) * 2);
+            padding-right: var(--size);
+            background-size: 50% 100%;
+            @include mobile () {
+                width: 100%;
+                padding-right: 50%;
+            }
+            &::after {
+                --circle: 10rem;
+                @include mobile () {
+                    --circle: 5rem;
+                }
+                @include mobileS () {
+                    display: none;
+                }
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(calc(-50% + var(--circle)), -50%);
+                width: var(--circle);
+                height: var(--circle);
+                border-radius: 50%;
+            }
+        }        
+    }
+    &__tit {
+        font: {
+            weight: 700;
+            size: 1.4rem;
+        }
+        letter-spacing: -0.05rem;
+        @include mobile () {
+            font-size: 1rem;
+            letter-spacing: 0.025rem;
+        }   
+    }
+    &__sub-tit {
+        margin-top: 2rem;
+        font: {
+            weight: 700;
+            size: 2.6rem;
+        }
+        letter-spacing: -0.05rem;
+        @include mobile () {
+            margin-top: 0.7rem;
+            font-size: 1.6rem;
+            letter-spacing: -0.075rem;
+        }
+        &::after {
+            display: block;
+            content: '';
+            width: 3rem;
+            height: 0.2rem;
+            margin: 2rem auto 1.7rem;
+            background-color: #fff;
+            @include mobile () {
+                margin: 1rem auto;
+            }
+        }
+    }
+    &__para {
+        line-height: 2.6rem;
+        font: {
+            weight: 500;
+            size: 1.6rem;
+        }
+        letter-spacing: -0.05rem;
+        @include mobile () {
+            line-height: 1.6rem;
+            font: {
+                weight: 300;
+                size: 1.2rem;
+            }
+        }
+    }
+    .more {
+        @include mobile () {
+            display: none;
+        }
+    }
+}
+/* //메인 그리드 */
+
+
+/* 서브 그리드 */
+.sub-grid {
+    &__wrapper {
+        display: flex;
+        padding: 2.2rem 0;
+        background-color: #fff;
+        border: 0.1rem solid #ddd;
+        border-radius: 1.5rem;
+        @include mobile () {
+            display: block;
+            padding: 0 1.5rem;
+            border-radius: 0.5rem;
+        }
+    }
+    &__item {
+        $class: 'info', 'webzine', 'lookAround';
+        $icon-img: 'treatment_info', 'heart', 'hospital_icon';
+        $icon-mobile-size: 3.7rem, 4.1rem, 3.7rem;
+        @for $i from 1 through length($class) {
+            &--#{nth($class, $i)} {
+                @include bgi('main', nth($icon-img, $i));
+                @include mobile () {
+                    background-size: nth($icon-mobile-size, $i);
+                }
+            }
+        }
+        
+        flex-grow: 1;
+        flex-basis: 0%;
+        padding: 2rem 13% 2rem 4.5rem;
+        border-right: 0.1rem solid #ddd;
+        background-repeat: no-repeat;
+        background-position: right 15% center;
+        @include mobile () {
+            padding: 1.5rem 0;
+            background-position: right 0.5rem center;
+            border-right: none;
+            border-bottom: 0.1rem solid #ddd;
+        }
+        &:last-of-type {
+            border-right: none;
+            @include mobile () {
+                border-bottom: none;
+            }
+        }        
+    }
+    &__tit {
+        font: {
+            weight: 700;
+            size: 1.8rem;
+        }
+        color: map-get($color, primary);
+        letter-spacing: -0.05rem;
+        @include mobile () {
+            font: {
+                weight: 500;
+                size: 1.4rem;
+            }
+        }
+    }
+    &__para {
+        line-height: 2rem;
+        margin-top: 1.5rem;
+        font-size: 1.4rem;
+        color: map-get($color, secondary);
+        letter-spacing: -0.025rem;
+        word-break: keep-all;
+        @include mobile () {
+            margin-top: 0.5rem;
+            font: {
+                weight: 300;
+                size: 1.2rem;
+            }
+            letter-spacing: -0.05rem;
+        }
+    }
+}
+/* //서브 그리드 */
+
+/* 휴원안내 */
+.closed-info {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4.5rem 0;
+        background-color: #ffd5d9;
+        background-image: url('/img/main/speaker.png'), url('/img/main/hospital.png');
+        background-repeat: no-repeat;
+        background-position: left 5% center, right 5% bottom -1.8rem;
+        border-radius: 1.5rem;
+        @include mobile () {
+            display: block;
+            padding: 2.7rem 2.5rem 2.7rem 9rem;
+            background-image: url('/img/main/speaker.png');
+            background-position: left 1.5rem center;
+            background-size: 5.8rem;
+        }
+    }
+    .badge {
+        flex-shrink: 0;
+        margin-right: 1.5rem;
+        @include mobile () {
+            margin: 0;
+        }
+    }
+    &__txt {
+        line-height: 2.6rem;
+        font: {
+            family: map-get($ftStyle, primary), map-get($ftStyle, insurance);
+            weight: 300;
+            size: 2.4rem;
+        }
+        color: #010101;
+        letter-spacing: -0.05rem;
+        word-break: keep-all;
+        @include mobile () {
+            line-height: 2.1rem;
+            font-size: 1.6rem;
+        }
+    }
+    &__strong {
+        font-weight: 800;
+        color: #ff3350;
+    }
+}
+/* //휴원안내 */
+
+
+/* 병원 소식 */
+.hospital-news {
+    position: relative;
+    .txt-half {
+        position: relative;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+        @include mobile () {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 2rem;
+            height: 0.2rem;
+            background-color: map-get($color, primary);
+            @include mobile () {
+                width: 1.2rem;
+                height: 0.1rem;
+            }
+        }
+    }
+    .more {
+        position: absolute;
+        top: 0.6rem;
+        right: 0;
+        padding-right: 1rem;
+        font-size: 1.2rem;
+        color: map-get($color, secondary);
+        @include angel ($direction: 'right', $size: 0.6rem, $thick: 0.1rem, $color: #666);
+        &::after {
+            top: 0.6rem;
+            right: 0;
+        }
+    }
+}
+/* //병원 소식 */
+
+/* 공지 리스트 */
+.notice-list {
+    &__wrapper {
+
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        font: {
+            weight: 300;
+            size: 1.4rem;
+        }
+        @include mobile () {
+            display: block;        
+        }
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+    &__para {
+        margin-bottom: 0.2rem;   
+        color: map-get($color, primary);
+        @include ellipsis ();
+        @include mobile () {
+            font: {
+                weight: 400;
+                size: 1.2rem;
+            }
+        }
+    }
+    &__date {
+        flex-shrink: 0;        
+        color: #999;
+        @include mobile () {
+            font-size: 1.1rem;
+        }
+    }
+}
+/* //공지 리스트 */
+
+/* 예약 및 상담 */
+.reservation-consulting {
+    @include bgi('common', 'cellphone');
+    background-repeat: no-repeat;
+    background-position: right 14% center;
+    @include tablet () {
+        background-position: right 0 center;
+        background-size: 9.75rem;
+    }
+    @include mobile () {
+        background-position: right 1.5rem center;
+    }
+    @include mobileS () {
+        background-size: 5.4rem;
+    }
+    &__desc {
+        margin-top: 0.3rem;
+        font: {
+            weight: 300;
+            size: 1.3rem;
+        }
+        color: map-get($color, primary);
+        letter-spacing: -0.05rem;
+        @include mobile () {
+            font-size: 1.2rem;
+            color: map-get($color, secondary);
+        }
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-top: 0.2rem;
+    }
+    &__tel-time {
+        display: inline-flex;
+        padding-bottom: 1rem;
+        margin-top: 2rem;
+        border-bottom: 0.1rem solid #d6d6d6;
+    }
+    &__checkup {
+        margin-top: 1rem;
+    }
+    &__fax {
+
+    }
+    &__main {
+        position: relative;
+        width: 5.4rem;
+        margin-right: 1.5rem;
+        font: {
+            weight: 300;
+            size: 1.3rem;
+        }
+        color: map-get($color, primary);
+        letter-spacing: -0.075rem;
+        @include mobile () {
+            margin-right: 0.7rem;
+            font-size: 1.2rem;
+            letter-spacing: 0;
+        }
+        &::after {
+            content: ':';
+            position: absolute;
+            right: 0;
+        }
+    }
+    &__sub {
+        font: {
+            weight: 300;
+            size: 1.3rem;
+        }
+        color: map-get($color, secondary);
+        @include mobile () {
+            font-size: 1.2rem;
+        }
+    }
+    &__tel {        
+        font-size: 0;        
+    }
+    &__numb {
+        line-height: 1;
+        font: {
+            weight: 700;
+            size: 3.2rem;
+        }
+        letter-spacing: -0.025rem;
+        @include mobile () {
+            font-size: 2.5rem;
+            letter-spacing: 0;
+        }
+        &--dark {
+            color: map-get($color, primary);
+        }
+        &--danger {
+            position: relative;
+            padding-left: 1rem;
+            margin-left: 0.4rem;
+            color: #fc584f;
+            @include dot ($size: 0.6rem, $bgc: #888);
+        }
+    }
+    &__time {
+        margin-top: 0.5rem;
+        font: {
+            weight: 300;
+            size: 1.2rem;
+        }
+        color: #999;
+        letter-spacing: -0.025rem;
+        @include mobile () {
+            font-size: 1.1rem;
+            letter-spacing: -0.05rem;
+        }
+    }
+}
+/* //예약 및 상담 */
+
+.txt-half {
+    font: {
+        weight: 700;
+        size: 2rem;
+    }
+    color: map-get($color, primary);
+    letter-spacing: -0.05rem;
+    &--color {
+        &-success {
+            color: #18cba6;
+        }
+        &-danger {
+            color: #fb6860;
+        }
+    }
+    @include mobile () {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* 오시는 길 */
+.map {
+    position: relative;
+    @include mobile () {
+        height: auto;
+    }
+    &__iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;        
+    }
+    .inner {
+        position: static;
+        height: 100%;
+        @include mobile () {
+            padding: 0;
+        }
+    }
+    .directions {
+        pointer-events: none;
+        position: relative;
+        width: 38.3rem;
+        height: 100%;
+        padding: 5rem;
+        background-color: rgba(0, 0, 0, .74);
+        @include mobile () {
+            width: 100%;
+            padding: 1.8rem 1.5rem;
+        }
+        &__tit {
+            font: {
+                weight: 700;
+                size: 2.4rem;
+            }
+            color: #fff;
+            letter-spacing: -0.05rem;
+            @include mobile () {
+                font-size: 1.5rem;   
+            }
+        }        
+        &__item {
+            position: relative;
+            padding-left: 4rem;
+            background-repeat: no-repeat;
+            @include mobile () {
+                padding-left: 2.2rem;
+            }
+        }
+        &__address {
+            margin-top: 3rem;
+            @include bgi('common','location');
+            background-size: 1.5rem;
+            @include mobile () {
+                margin-top: 1rem;
+            }
+        }
+        &__time {
+            margin-top: 2rem;
+            @include bgi('common','time');
+            @include mobile () {
+                margin-top: 1.5rem;
+                background-size: 1.5rem;
+            }
+            .directions__para {
+                margin-top: 0.7rem;
+                @include mobile () {
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+        &__para {
+            line-height: 2rem;
+            font: {
+                weight: 500;
+                size: 1.4rem;
+            }
+            color: #fff;
+            letter-spacing: -0.025rem;
+            word-break: keep-all;
+            @include mobile () {
+                font: {
+                    weight: 300;
+                    size: 1.2rem;
+                }
+                letter-spacing: 0;
+            }
+        }
+        &__hr {
+            width: 100%;
+            height: 0.1rem;
+            margin-top: 1rem;
+            background-color: #999;
+            @include mobile () {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+/* //오시는길 */
+
+
+
+/* 숨김 */
+.blind {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 0.1rem;
+    height: 0.1rem;
+    margin: -0.1rem;
+}
+
+
+/* 반응형 */
+.only {
+    &-pc {
+        @include mobile () {
+            display: none;
+        }
+    }
+    &-mobile {
+        display: none;
+        @include mobile () {
+            display: block;
+        }
+    }
+}
+
+
+/* 폰트 */
+.line {
+    &-1 {
+        line-height: 2.6rem;
+    }
+    &-1 {
+        line-height: 2.4rem;
+    }
+    &-1 {
+        line-height: 2.2rem;
+    }
+    &-1 {
+        line-height: 2.1rem;
+    }
+    &-1 {
+        line-height: 2rem;
+    }
+}
+
+.ftC {
+    &-1 {
+        color: #f7918d;
+        color: #fb6860;
+        color: #d47d91;
+        color: #ff4a40;
+        color: #fe665e;
+    }
+    &-2 {
+        color: map-get($color, secondary);
+    }
+    &-3 {
+        color: #333;
+    }
+    &-4 {
+        color: #18caa6;
+        color: #18cba6;
+        color: #3fb7b8;
+    }
+    &-5 {
+        color: #999;
+    }
+    &-6 {
+        color: #3292e1;
+        color: #3385c9;
+        color: #6e9ec6;
+        color: #479ccf;
+    }
+    &-7 {
+        color: #ecaf07;
+        color: #efc202;
+    }
+    &-8 {
+        color: #fff;
+    }
+}
+/* //폰트 */
+
+
+/*
+.dot {
+    @include dot($top: 1rem, $size: 0.3rem, $padding: 1rem, $bgc: #fb6860);
+    @include dot($top: 1rem, $size: 0.4rem, $padding: 1rem, $bgc: #e0978b);
+    @include dot($top: 1rem, $size: 0.4rem, $padding: 1rem, $bgc: #fdbe0f);
+    @include dot($top: 1rem, $size: 0.4rem, $padding: 1rem, $bgc: #9acd66);
+    @include dot($top: 1rem, $size: 0.4rem, $padding: 1rem, $bgc: #629acd);
+}
+*/
+
+
+/* 달력 */
+.calendar {    
+    display: table;
+    width: 4.2rem;
+    height: 5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    color: #fff;
+    &__middle {
+        display: table-cell;
+        line-height: 1;
+        text-align: center;
+        vertical-align: middle;
+    }
+    &--nov {
+        background-color: #3caeaf;
+    }
+    &--dec {
+        background-color: #e68d7e;
+    }
+    &--oct {
+        background-color: #6fa4c4;
+    }
+    &--sep {
+        background-color: #fd9010;
+    }
+    &--aug {
+        background-color: #58b1dc;
+    }
+    &--jul {
+        background-color: #e8c70f;
+    }
+    &__numb {
+        font: {
+            weight: 700;
+            size: 2rem;
+        }
+    }
+    &__txt {
+        margin-top: 0.2rem;
+        font: {
+            weight: 500;
+            size: 1.1rem;
+        }
+    }
+}
+/* //달력 */
+
+/* //공통 */

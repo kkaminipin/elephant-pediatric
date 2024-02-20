@@ -1,0 +1,71 @@
+
+.aside {
+    flex-shrink: 0;
+    width: 19rem;
+    margin-right: 4rem;
+    /* 병원안내 */
+    &--hospital-info {
+        .aside__tit {
+            background-color: #eba070;                
+        }
+        .snb__item { 
+            &.active {
+                border-bottom: 0.2rem solid #eba070;
+                .snb__link {                    
+                    color: #eba070;
+                }
+            }
+        }
+    }
+    &--specialty-clinic {
+        .aside__tit {
+            background-color: #18cba6;                
+        }
+        .snb__item { 
+            &.active {
+                border-bottom: 0.2rem solid #18cba6;
+                .snb__link {                    
+                    color: #18cba6;
+                }
+            }
+        }
+    }
+    &__tit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        font: {
+            weight: 500;
+            size: 2.5rem;
+        }
+        letter-spacing: -0.075rem;
+        color: #fff;
+    }
+    .snb {
+        &__item {
+            border-bottom: 0.1rem solid #ddd;            
+            &.active {
+                .snb__link {
+                    background-color: #fff;
+                }
+            }
+        }
+        &__link {
+            display: flex;
+            align-items: center;
+            height: 5rem;
+            padding: 0 2rem;
+            background-color: #f9f9f9;
+            font: {
+                weight: 300;
+                size: 1.6rem;
+            }
+            color: map-get($color, secondary);
+            letter-spacing: -0.05rem;
+        }
+    }
+    @include mobile () {
+        display: none;
+    }
+}

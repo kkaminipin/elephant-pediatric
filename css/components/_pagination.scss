@@ -1,0 +1,52 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__btn {
+        &:first-of-type {
+            margin-right: 0.6rem;
+        }
+        &:last-of-type {
+            margin-left: 0.6rem;
+        }
+    }
+    &__arrow {        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        border: 0.1rem solid #d1d1d1;
+        border-radius: 50%;        
+    }
+    &__prev {
+        
+    }
+    &__prevAll {
+        
+    }
+    &__next {
+
+    }
+    &__nextAll {
+        @include clamp ($width: 0.5rem, $height: 0.5rem, $margin: 0, $direction: 'right', $double: 'true', $bdc: #18cba6);
+    }
+
+    &__ol {
+        display: flex;
+    }
+    &__li {
+        margin-right: 2.5rem;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    &__numb {
+        font: {
+            weight: 300;
+            size: 1.5rem;
+        }
+        color: #333;
+        
+    }
+}

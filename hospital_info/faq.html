@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+
+	<!-- Title -->
+	<title>테스트</title>
+
+	<!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+	<!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header includeJs" data-include-file="/html/include/header.html"></header>
+        
+        <main class="container sub">
+            <div class="inner">
+                <aside class="aside aside--hospital-info">
+                    <h2 class="aside__tit">병원안내</h2>
+                    <ul class="snb">
+                        <li class="snb__item">
+                            <a href="" class="snb__link">인사말</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">병원알림</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">진료안내</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">시설안내</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">오시는길</a>
+                        </li>
+                        <li class="snb__item">
+                            <a href="" class="snb__link">병원소식</a>
+                        </li>
+                        <li class="snb__item active">
+                            <a href="" class="snb__link">자주찾는질문</a>
+                        </li>
+                    </ul>
+                </aside>
+                <!-- 서브페이지 본문 -->
+                <article class="substance">
+                    <div class="substance__head">
+                        <h3 class="substance__tit">자주찾는질문</h3>
+                        <div class="location">
+                            <span class="location__item location__home"><img src="/img/common/home.png" alt="홈"></span>
+                            <span class="location__item location__middle">병원안내</span>
+                            <span class="location__item location__current">자주찾는질문</span>
+                        </div>
+                    </div>
+                    <div class="substance__body">
+                        <div class="faq">
+                            <div class="list-facility">
+                                <div class="list-count">
+                                    <span class="list-count__txt">총 <span class="list-count__numb">24</span>건</span>
+                                    <span class="list-count__page">(1/12page)</span>
+                                </div>
+                                <div class="list-search">
+                                    <select class="list-search__item list-search__select">
+                                        <option value="">제목</option>
+                                    </select>
+                                    <div class="list-search__inp-wrapper">
+                                        <input type="text" class="list-search__item list-search__inp">
+                                        <button type="submit" class="list-search__btn">
+                                            <span class="blind">검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-faq">
+                                <ol class="list-faq__ol">
+                                    <li class="list-faq__li active">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">10</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">9</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    아토피 피부염과 지루성 피부염의 차이는?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">8</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    2주이상 지속되는 기침 증상은 어떻게하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">7</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">6</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">5</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">4</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">3</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">2</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="list-faq__li">
+                                        <div class="list-faq__q">
+                                            <span class="list-numb">1</span>
+                                            <h4 class="list-tit list-faq__tit">
+                                                <button type="button" class="list-btn">
+                                                    <span class="list-tit__qa list-tit__q">Q</span>
+                                                    피부가 너무 건조해서 긁는데, 어떻게 해야하나요?
+                                                </button>
+                                            </h4>                                            
+                                        </div>
+                                        <div class="list-faq__a">
+                                            <span class="list-tit__qa list-tit__a">A</span>
+                                            <p class="para">
+                                                ‘이상한, 알 수 없는, 비정상적인 질환’이라는 의미를 가지고 있는 아토피(ATOPY)는 음식물과 흡인성 물질에 
+                                                대한 알레르기 반응이 비정상적으로 발생하여 피부습진, 천식, 피부 건조증, 습진 등의 다양한 증상이 나타나고 
+                                                이름에서 의미하듯 발병원인에 대한 어느 한가지로 설명하기 어렵습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ol>
+                                
+                            </div>
+
+                            <!-- 페이지네이션 -->
+                            <div class="pagination">
+                                <button type="button" class="pagination__btn pagination__arrow pagination__prevAll"></button>
+                                <button type="button" class="pagination__btn pagination__arrow pagination__prev"></button>
+                                <ol class="pagination__ol">
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">1</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">2</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">3</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">4</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">5</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">6</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">7</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">8</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">9</button></li>
+                                    <li class="pagination__li"><button type="button" class="pagination__btn pagination__numb">10</button></li>
+                                </ol>
+                                <button type="button" class="pagination__btn pagination__arrow pagination__next"></button>
+                                <button type="button" class="pagination__btn pagination__arrow pagination__nextAll"></button>
+                            </div>
+                            <!-- //페이지네이션 -->
+                            
+                        </div>
+                    </div>
+                </article>
+                <!-- //서브페이지 본문 -->
+            </div>
+        </main>
+
+        <footer class="footer includeJs" data-include-file="/html/include/footer.html"></footer>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+.nav {
+    @include mobile() {
+        display: none;
+    }
+    &__header {
+        display: none;
+    }
+    .gnb {
+        display: flex;
+        &__height {
+            display: flex;
+            align-items: center;
+            height: var(--header-height);
+            margin-right: 8rem;
+            @include tablet() {
+                margin-right: 5rem;
+            }
+        }
+        &__btn {
+            font: {
+                family: map-get($ftStyle, primary), map-get($ftStyle, insurance);
+                size: 1.8rem;
+            }
+            color: map-get($color, primary);
+        }
+        &__item {
+            &:last-of-type {
+                .gnb__height {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .lnb {
+        display: none;
+        margin: 3.5rem 0;
+        &__item {
+            line-height: 3.5rem;
+        }
+        &__link {
+            font: {
+                family: map-get($ftStyle, primary), map-get($ftStyle, insurance);
+                size: 1.5rem;
+            }
+            color: map-get($color, secondary);
+            &:hover {
+                color: #18cba6;
+            }
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 1.8rem;
+        right: 1.5rem;
+    }
+
+    .header.active & {
+        /* 메뉴 마우스 오버시 */
+        .lnb {
+            display: block;
+        }
+
+        /* 햄버거 메뉴 클릭시 */
+        @include mobile() {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: #000000b3;
+            &__header {
+                display: flex;
+                align-items: center;
+                height: var(--header-height);
+                background-color: #18cba6;
+            }
+            &__logo {
+                width: 8.2rem;
+                height: 2.7rem;
+                @include bgi("common/m", "logo");
+                background-size: 100%;
+            }
+            &__wrapper {
+                overflow-y: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 1;
+                width: 90%;
+                height: 100%;
+                background-color: #fff;
+            }
+            .gnb {
+                display: block;
+                &__item {
+                    /* 햄버거 메뉴 클릭시 */
+                    &.active {
+                        .lnb {
+                            display: block;
+                        }
+                        .gnb__btn {
+                            color: #18cba6;
+                            @include angel($direction: "top", $size: 1.3rem, $thick: 0.2rem, $color: #989898);
+                            &::after {
+                                top: 2.5rem;
+                            }
+                        }
+                    }
+                    /* //햄버거 메뉴 클릭시 */
+                }
+                &__height {
+                    width: 100%;
+                    height: 4.5rem;
+                    border-bottom: 0.1rem solid #ddd;
+                }
+                &__btn {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 1.5rem;
+                    font-size: 1.4rem;
+                    letter-spacing: -0.05rem;
+                    text-align: left;
+                    @include angel($direction: "bottom", $size: 1.3rem, $thick: 0.2rem, $color: #989898);
+                    &::after {
+                        top: 1.8rem;
+                        right: 2rem;
+                    }
+                }
+            }
+            .lnb {
+                display: none;
+                margin: 0;
+                &__item {
+                    background-color: #f9f9f9;
+                    border-bottom: 0.1rem solid #ddd;
+                }
+                &__link {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 1.5rem;
+                    height: 4.5rem;
+                    font-size: 1.3rem;
+                    letter-spacing: -0.05rem;
+                }
+            }
+        }
+        /* //햄버거 메뉴 클릭시 */
+    }
+    /* //header active */
+}
